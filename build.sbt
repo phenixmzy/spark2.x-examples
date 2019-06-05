@@ -1,4 +1,4 @@
-name := "spark-example-2.x"
+name := "spark2.x-example"
 
 version := "1.0"
 
