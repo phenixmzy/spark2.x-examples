@@ -9,13 +9,11 @@ object SparkAlluxioTest {
     val sparkSession = SparkSession.builder.appName("Simple Application").getOrCreate()
 
     import sparkSession.implicits._
-    val data = sparkSession.read.text(input).as[String]
+    val words = sparkSession.read.text(input).as[String]
+      .flatMap(value => value.split("\\s+"))
+      .groupByKey(_.toLowerCase)
 
-    val words = data.flatMap(value => value.split("\\s+"))
-
-    val groupedWords = words.groupByKey(_.toLowerCase)
-
-    val counts = groupedWords.count()
+    val counts = words.count()
 
     counts.show()
     sparkSession.stop()
