@@ -6,7 +6,7 @@ import org.apache.spark.sql.SparkSession
 object SparkWordCountTest {
   def main(args: Array[String]) {
     val input = args(0)
-    val sparkSession = SparkSession.builder.appName("Simple Application").getOrCreate()
+    val sparkSession = SparkSession.builder.appName("Simple WordCount Application").getOrCreate()
 
     import sparkSession.implicits._
     val words = sparkSession.read.text(input).as[String]

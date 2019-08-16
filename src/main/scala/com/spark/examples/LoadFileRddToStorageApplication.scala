@@ -10,7 +10,7 @@ import org.apache.spark.sql.SparkSession
   *       -> gameSummaryRddPath(game_id, uv, play_exp, play_count)
   *       -> gameTypeSummaryRddPath(game_type, uv, play_exp, play_count)
   */
-object LoadFileRddToAlluxioApplication {
+object LoadFileRddToStorageApplication {
   def main(args: Array[String]): Unit = {
     val gamePlayInputFile = args(0)
     val gamePlayRddPath= args(1)

@@ -1,4 +1,4 @@
-name := "spark2.x-example-with-alluxio"
+name := "spark2.x-example"
 
 version := "1.0"
 
