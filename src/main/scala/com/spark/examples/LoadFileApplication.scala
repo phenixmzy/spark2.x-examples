@@ -4,13 +4,13 @@ import org.apache.spark.sql.SparkSession
 /**
   * THe LoadFile's rdd to Alluxio
   * Created by mazhiyong on 19/6/24.
-  * LoadFileRddToAlluxioApplication
+  * LoadFileRddApplication
   *   -> gameplayRddAlluxio (game_id, user_id, game_type, channel_from, game_exp)
   *     -> GameUserSummaryRddAlluxioPath(game_id, user_id, play_exp, play_count)
   *       -> gameSummaryRddPath(game_id, uv, play_exp, play_count)
   *       -> gameTypeSummaryRddPath(game_type, uv, play_exp, play_count)
   */
-object LoadFileRddToStorageApplication {
+object LoadFileApplication {
   def main(args: Array[String]): Unit = {
     val gamePlayInputFile = args(0)
     val gamePlayRddPath= args(1)
