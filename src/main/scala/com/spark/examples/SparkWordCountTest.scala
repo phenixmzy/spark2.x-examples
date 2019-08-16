@@ -3,7 +3,7 @@ import org.apache.spark.sql.SparkSession
 /**
   * Created by mazhiyong on 19/7/5.
   */
-object SparkAlluxioTest {
+object SparkWordCountTest {
   def main(args: Array[String]) {
     val input = args(0)
     val sparkSession = SparkSession.builder.appName("Simple Application").getOrCreate()
