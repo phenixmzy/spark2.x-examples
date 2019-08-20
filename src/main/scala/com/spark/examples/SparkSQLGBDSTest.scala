@@ -17,8 +17,9 @@ object SparkSQLGBDSTest {
     val spark = SparkSession.builder.appName("Simple SparkSQL GBDS Test").getOrCreate()
     val dataFrame = spark.read.json(gamePlayInputFile)
     dataFrame.createTempView("game_play")
-    val gamePlayDF = spark.sql("select game_id, user_id, game_type, channel_from, game_exp from game_play")
-    gamePlayDF.rdd.saveAsTextFile(gamePlayRddPath)
+    spark.sql("select game_id, user_id, game_type, channel_from, game_exp from game_play limit 20").show()
+    //val gamePlayDF = spark.sql("select game_id, user_id, game_type, channel_from, game_exp from game_play")
+    //gamePlayDF.rdd.saveAsTextFile(gamePlayRddPath)
     spark.stop()
   }
 }
